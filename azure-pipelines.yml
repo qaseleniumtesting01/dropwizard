@@ -1,15 +1,40 @@
-# Gradle
-# Build your Java project and run tests with Gradle using a Gradle wrapper script.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/java
-
 trigger:
 - main
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'macOS-latest'
 
 steps:
+- task: Npm@1
+  inputs:
+    command: 'install'
+    workingDir: 'npm'
+- task: Npm@1
+  inputs:
+    command: 'install'
+    workingDir: 'npm/handlers'
+- task: Npm@1
+  inputs:
+    command: 'install'
+    workingDir: 'npm/public'
+- task: Npm@1
+  inputs:
+    command: 'install'
+    workingDir: 'npm/routes'
+- task: Npm@1
+  inputs:
+    command: 'install'
+    workingDir: 'npm/services'
+- task: Npm@1
+  inputs:
+    command: 'install'
+    workingDir: 'npm/test/unit'
+- task: CmdLine@2
+  inputs:
+    script: |
+      echo YAML pipline
+      dir=$(pwd)
+      du -sh $dir
 - task: WhiteSource@20
   inputs:
-    projectName: 'MavenYaml'
+    projectName: 'MavenYAML'
