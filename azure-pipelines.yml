@@ -37,4 +37,4 @@ steps:
       du -sh $dir
 - task: WhiteSource@20
   inputs:
-    projectName: 'MavenYAML'
+    projectName: 'MavenYAMLBigProj'
