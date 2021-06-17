@@ -37,4 +37,5 @@ steps:
       du -sh $dir
 - task: WhiteSource@20
   inputs:
+    cwd: '$(System.DefaultWorkingDirectory)'
     projectName: 'Dropwizard'
