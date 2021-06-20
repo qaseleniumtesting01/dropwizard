@@ -39,4 +39,3 @@ steps:
   inputs:
     cwd: '$(System.DefaultWorkingDirectory)'
     projectName: 'Dropwizard'
-    configuration: 'resolveAllDependencies=false'
