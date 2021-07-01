@@ -5,36 +5,13 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: Npm@1
-  inputs:
-    command: 'install'
-    workingDir: 'npm'
-- task: Npm@1
-  inputs:
-    command: 'install'
-    workingDir: 'npm/handlers'
-- task: Npm@1
-  inputs:
-    command: 'install'
-    workingDir: 'npm/public'
-- task: Npm@1
-  inputs:
-    command: 'install'
-    workingDir: 'npm/routes'
-- task: Npm@1
-  inputs:
-    command: 'install'
-    workingDir: 'npm/services'
-- task: Npm@1
-  inputs:
-    command: 'install'
-    workingDir: 'npm/test/unit'
 - task: CmdLine@2
   inputs:
     script: |
       echo YAML pipline
       dir=$(pwd)
       du -sh $dir
+
 - task: WhiteSource@20
   inputs:
     cwd: 'npm/public'
