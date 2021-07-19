@@ -16,4 +16,4 @@ steps:
 
 - task: WhiteSource@20
   inputs:
-    cwd: 'npm-circular/node_modules/'
+    cwd: 'node_modules/'
