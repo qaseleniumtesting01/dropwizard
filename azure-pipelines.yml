@@ -16,4 +16,6 @@ steps:
   inputs:
     cwd: 'npm/public'
     projectName: 'Dropwizard/npm/public'
-    configuration: 'checkPolicies=true'
+    configuration: |
+      checkPolicies=true
+      productName=Salih2
