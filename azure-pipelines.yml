@@ -18,4 +18,3 @@ steps:
     projectName: 'Dropwizard/npm/public'
     configuration: |
       checkPolicies=true
-      productName=Salih2
