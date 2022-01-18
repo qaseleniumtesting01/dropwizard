@@ -12,9 +12,10 @@ steps:
       dir=$(pwd)
       du -sh $dir
 
-- task: WhiteSource@20
+- task: WhiteSource@21
   inputs:
     cwd: 'npm/public'
     projectName: 'Dropwizard/npm/public'
     configuration: |
       checkPolicies=true
+      resolveAllDependencies=true
